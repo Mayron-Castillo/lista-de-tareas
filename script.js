@@ -3,6 +3,13 @@ const form = document.querySelector(".form");
 const input = document.querySelector(".input");
 const list = document.querySelector(".agregado");
 
+const errorMessage = document.createElement("p");
+errorMessage.textContent = "La tarea debe tener al menos 3 caracteres.";
+errorMessage.style.color = "red";
+errorMessage.style.fontSize = "14px";
+errorMessage.style.display = "none"; // Ocultarlo por defecto
+form.appendChild(errorMessage);
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     
@@ -12,10 +19,11 @@ form.addEventListener("submit", (e) => {
     newTask.classList.add("task");
 
     if (value.length < 3) {
-        alert("La tarea debe tener al menos 3 caracteres.");
+        errorMessage.style.display = "block";
         return;
     }
-
+    errorMessage.style.display = "none";
+    
     // Agregar el texto a la task
     newTask.textContent = `- ${value}`;
 
