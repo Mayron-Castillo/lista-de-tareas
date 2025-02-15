@@ -5,10 +5,16 @@ const list = document.querySelector(".agregado");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    
     const value = input.value.trim(); 
 
     const newTask = document.createElement("li");
     newTask.classList.add("task");
+
+    if (value.length < 3) {
+        alert("La tarea debe tener al menos 3 caracteres.");
+        return;
+    }
 
     // Agregar el texto a la task
     newTask.textContent = `- ${value}`;
