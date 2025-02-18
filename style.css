@@ -80,15 +80,6 @@ li {
     cursor: pointer;
 }
 
-/* .tachado {
-    text-decoration: line-through;
-    opacity: 0.6;
-    background-color: rgb(241, 94, 94);
-} */
-
-
-/* estos 3 son para cuando se use con el codigo check */
-
 .completed {
     background-color: #28a745;
     opacity: 0.8;
